@@ -1,0 +1,17 @@
+Free Tkinter code (epi 2 )/ part 2
+
+
+from tkinter import *
+from PIL import Image, ImageTk
+
+attrisha_root = Tk()
+attrisha_root.geometry("1500x500")
+
+
+photo = PhotoImage(file="welcome.png")
+andrew_label = Label(image=photo)
+andrew_label.pack()
+
+
+attrisha_root.mainloop()
+
