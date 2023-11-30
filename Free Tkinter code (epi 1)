@@ -1,0 +1,26 @@
+# Free Tkinter code (epi 1)
+
+from tkinter import *
+from tkinter import ttk
+
+root =Tk()
+frm =ttk.Frame(root, padding=20)
+
+# width x Height
+root.geometry("600x300")
+
+#width, height
+root.minsize(200,100)
+
+#width, height
+root.maxsize(1000,900)
+
+#label 
+shakaib = Label(text="shakaib is a good boy and this is his GUI")
+shakaib.pack()
+
+
+root.mainloop()
+
+
+
