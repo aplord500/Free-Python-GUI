@@ -1,0 +1,63 @@
+# Free Tkinter code (epi 3 )
+
+
+from tkinter import *
+root = Tk()
+root.geometry("1500x500")
+root.title("My GUI With Andrew")
+
+#Import Label Options
+
+"""
+text - adds the text 
+bd - background
+fg - forground 
+font - sets the font 
+1.("comicsansms",20, "bold")
+2."comicsansms,20, bold" 
+padx - x padding 
+pady - y padding 
+relief - border stylish - SUNKEN, RAISED, GROOVE, RIDGE 
+
+
+"""
+title_label = Label( text= ''' Forbes is an American business magazine founded by B.C. Forbes in 1917 and
+owned by Hong Kong-based investment group Integrated Whale Media Investments since 2014.
+in Asia as well as editions produced under license in 27 countries
+                     and
+regions worldwide. The magazine is known for its lists and rankings, including of the richest Americans 
+(the Forbes 400), the 30 most notable young people under the age of 30 (Forbes 30 under 30), America's
+ Wealthiest Celebrities, the world's top companies (the Forbes Global 2000), Forbes list of the World's 
+Most Powerful People, and The World's Billionaires.[6] The motto of Forbes magazine is 
+"Change the World" ''',bg= "indigo", fg="white", padx = 30, pady =98, font="comicsansms 20  bold", borderwidth=3, relief=SUNKEN)
+title_label.pack()
+
+
+# Important pack optinons 
+# 1. anchor - nw
+# side = top, bottom, left, right 
+
+
+'''
+title_label.pack(side=BOTTOM,anchor="ne")
+title_label.pack(side=BOTTOM,anchor="se")
+title_label.pack(side=BOTTOM,anchor="nw")
+
+'''
+'''
+fill
+padx
+pady
+
+'''
+'''
+title_label.pack(side=BOTTOM,anchor="ne",fill = X/fill=Y)
+title_label.pack(side=BOTTOM,anchor="se",fill = X/fill=Y)
+title_label.pack(side=BOTTOM,anchor="nw",fill = X/fill=Y)
+'''
+title_label.pack(side=BOTTOM,anchor="ne",fill =X, padx = 50, pady= 50)
+
+
+root.mainloop()
+
+
