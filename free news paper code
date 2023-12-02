@@ -1,0 +1,50 @@
+# free New's paper code
+
+
+from tkinter import*
+from PIL import Image, ImageTk
+import os
+
+root = Tk()
+root.geometry("1200x250")
+root.title("The New's Time")
+
+title_label = Label(text= " THE WWE (RAW) NEWS", bg="gray", fg="white", padx=10, pady= 10, font="TimesNewRoman 25 bold", borderwidth=25,relief=RIDGE )
+title_label.pack()
+
+
+maincontain_label = Label(text= '''
+                          
+1) WWE Raw, also known as Monday Night Raw or simply Raw, is an American professional wrestling television program produced by WWE.
+It airs live every Monday at 8 p.m. Eastern Time (ET) on USA Network.The show features characters from the Raw brand,to which 
+WWE employees are assigned to work and perform. The show debuted on January 11, 1993 and is considered to be one of two flagship 
+shows, along with Friday Night SmackDown.[4] In September 2000, Raw moved from the USA Network to TNN,[5] which rebranded to Spike
+TV in August 2003.
+                          
+2) On October 3, 2005, Raw returned to the USA Network, where it remains to this day. The WWE Network has ceased operations in the
+United States as of April 5, 2021, with all content being moved to Peacock, which currently has most Raw episodes, excluding content 
+that was censored or removed by Peacock's standards and practices department.
+
+3) Since its first episode, Raw has been broadcast live from 208 different arenas, 171 cities and towns, and ten different nations:
+United States, Canada, United Kingdom, Afghanistan in 2005, Iraq in 2006 and 2007, South Africa,[8] Germany,[9] Japan,[10] Italy,[11]
+and Mexico.''', bg="indigo", fg= "white", font= "TimesNewRoman 8 bold",borderwidth=25,relief=RIDGE )
+maincontain_label.pack(side=BOTTOM,anchor="center",fill=Y,padx=20,pady=20,)
+
+image = Image.open("wwe.webp")
+image2 = Image.open("wweimage.jpg")
+photo= ImageTk.PhotoImage(image)
+photo2= ImageTk.PhotoImage(image2)
+
+one_label = Label(image=photo, width= 400, height= 600)
+two_label = Label(image=photo2, width= 400, height= 600)
+one_label.pack(side=BOTTOM,anchor="center",padx=20,pady=20)
+two_label.pack(side=BOTTOM,anchor="w",padx=20,pady=20)
+
+
+
+root.mainloop()
+
+
+
+
+
