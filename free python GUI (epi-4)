@@ -1,0 +1,28 @@
+from tkinter import*
+
+root =Tk()
+root.geometry("1200x350")
+root.title("The CWA")
+
+
+a1 = Frame(root, bg="gray", borderwidth=4, relief=SUNKEN)
+a1.pack(side=LEFT, fill="y",padx=15,pady=15)
+
+b1 = Frame(root, bg="gray", borderwidth=8, relief=SUNKEN)
+b1.pack(side=TOP, fill="x",padx=15,pady=15)
+
+d1 = Frame(root, bg="gray", borderwidth=8, relief=SUNKEN)
+d1.pack(side=BOTTOM, fill="x",padx=15,pady=15)
+
+
+c1 =Label(a1, text= "Project Tk- pycharm")
+c1.pack(padx=100,pady=100)
+
+b1 =Label(b1, text= "welcome to sublime text editor", font="GoudyStout 15 bold",fg="red",bg="black",pady=5)
+b1.pack()
+
+b1 =Label(d1, text= "TERMINAL",font="GoudyStout 15 bold",fg="black",bg="white",pady=45)
+b1.pack()
+
+
+root.mainloop()
