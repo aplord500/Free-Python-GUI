@@ -1,0 +1,100 @@
+from tkinter import*
+from PIL import Image, ImageTk
+
+def getvals():
+    print(" submiting form !")
+
+    print(f"{namevalue.get(), phonevalue.get(), gendervalue.get(), emergencyvalue.get(),  payvalue.get(),  foodservicevalue.get()}")
+
+
+    with open("recods.txt","a") as f:
+        f.write(f"{namevalue.get(), phonevalue.get(), gendervalue.get(), emergencyvalue.get(),  payvalue.get(),  foodservicevalue.get()}\n")
+
+
+root = Tk()
+root.geometry("7500x450")
+root.title("The Alen X")
+
+
+# heading 
+label = Label(text= "The A.PLord and Travels ",bg= "darkred", fg="white",borderwidth=10,relief= SUNKEN,font= "TimesNewRoman 20 bold")
+label.grid(padx=70,pady=70)
+
+
+
+# contains 
+name = Label(root, text="Name",pady=5,font="TimesNewRoman 8 bold")
+phone = Label(root, text="Phone",pady=5,font="TimesNewRoman 8 bold")
+gender = Label(root, text="Gender",pady=5,font="TimesNewRoman 8 bold")
+emergency  = Label(root, text="Emergency Contact",pady=5,font="TimesNewRoman 8 bold")
+pay = Label(root, text="Payment Mode",pady=5,font="TimesNewRoman 8 bold")
+
+
+# pack text for a form 
+name.grid(row=1, column=2)
+phone.grid(row=2, column=2)
+gender.grid(row=3, column=2)
+emergency.grid(row=4, column=2)
+pay.grid(row=5, column=2)
+
+
+# tkinters variables for storing enteries
+namevalue = StringVar()
+phonevalue = StringVar()
+gendervalue = StringVar()
+emergencyvalue = StringVar()
+payvalue = StringVar()
+foodservicevalue = IntVar()
+
+
+# entries for our form 
+nameentry = Entry(root, textvariable=namevalue,bg="green",fg="white", borderwidth=4)
+phoneentry = Entry(root, textvariable=phonevalue,bg="green",fg="white", borderwidth=4)
+genderentry = Entry(root, textvariable=gendervalue,bg="green",fg="white", borderwidth=4)
+emergencyentry = Entry(root, textvariable= emergencyvalue,bg="green",fg="white", borderwidth=4)
+payentry = Entry(root, textvariable=payvalue,bg="green",fg="white", borderwidth=4)
+
+
+# packing for our entries 
+nameentry.grid(row=1,column=3)
+phoneentry.grid(row=2,column=3)
+genderentry.grid(row=3,column=3)
+emergencyentry.grid(row=4,column=3)
+payentry.grid(row=5,column=3)
+
+
+# check box & packing it 
+
+foodservice =Checkbutton( text="Want to prebook your meals ?", variable= foodservicevalue, borderwidth=3, font="comicsansms 10 bold", pady=2,
+                          padx=2, bg="darkblue", fg= "white")
+foodservice.grid(row=6, column= 3)
+
+
+#Button & packing it  and assigning it a command 
+#Button(text="Submit to Aplord travels", command = getvals).grid(row=7,column=3)
+#Button(text="Cancle the booking",command= setwell).grid(row=8,column=3)
+
+
+frame4 =Frame(root, borderwidth=5, bg="blue", relief= SUNKEN)
+frame4.grid()
+b4 = Button(frame4, bg="white",fg="green", text="Submit to Aplord travels", padx= 40,command=getvals,font= "TimesNewRoman 8 bold")
+b4.grid(row=7,column=3,padx= 20,pady= 10)
+
+#puting an image
+image = Image.open("APTOURS.jpg")
+photo = ImageTk.PhotoImage(image)
+
+andrew_label = Label(image=photo)
+andrew_label.grid()
+
+
+
+root.mainloop()
+
+
+
+
+
+
+
+
