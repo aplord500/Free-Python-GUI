@@ -1,0 +1,21 @@
+from tkinter import*
+
+def aplord(event):
+    print(f"You  clicked on the button at {event.x}, {event.y} ")
+
+root = Tk()
+root.title("Event in Tkinter")
+root.geometry("700x300")
+
+widget = Button(root, text= 'click me please')
+widget.pack()
+
+widget.bind('<Button-1>', aplord )
+widget.bind('<Button-1>', quit )
+
+
+
+root.mainloop()
+
+
+
