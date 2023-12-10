@@ -1,0 +1,89 @@
+from tkinter import *
+from PIL import Image, ImageTk
+
+def every_100(text):
+    final_text = ""
+    for i in range (0, len(text)):
+        final_text +=text[i]
+        if i%100==0 and i!=0:
+            final_text += "\n"
+    return final_text
+
+
+
+
+root = Tk()
+root.title("The Big News")
+root.geometry("1000x1000")
+
+
+texts = []
+photos =[]
+for i in range(0, 3):
+    with open(f"{i+1}.txt") as f:
+        text = f.read()
+        texts.append(every_100(text))
+
+    image = Image.open(f"{i+1}.png")
+    # TODO: resize these images
+    image = image.resize((240,200), Image.BICUBIC)
+    photos.append(ImageTk.PhotoImage(image))
+
+
+f0 = Frame(root, width=800, height=70)
+Label(f0, text="     The Sat & Sun Show (S.S.S)       ", font="lucida 25 bold", bg= "darkgray",fg="black",borderwidth=10,relief= SUNKEN).pack(padx=30,pady=30)    
+f0.pack()
+Label(f0, text="   Jan 23 2050   ", font="lucida 10 bold", bg= "gray",fg="black").pack()    
+f0.pack()
+
+
+
+f1 =Frame(root, width=75, height=50,pady=14)
+Label(f1,text=''' In contrast to the natural environment is the built environment.
+       Built environments are where humans have fundamentally transformed landscapes 
+      such as urban settings and agricultural land conversion, the natural environment 
+      is greatly changed into a simplified human environment. Even acts which seem less
+       extreme, such as building a mud hut or a photovoltaic system in the desert, 
+      the modified environment becomes an artificial one. Though many animals build
+       things to provide a better environment for themselves, they are not human, 
+      hence beaver dams, and the works of mound-building termites, are thought of as natural.
+''',padx=20,pady=20).pack(side="left")
+Label(f1, image=photos[0],anchor="e").pack(side="left")
+f1.pack(anchor="w")
+
+
+f2 =Frame(root, width=75, height=50,pady=14, padx= 20)
+Label(f2,text='''People cannot find absolutely natural environments on Earth, 
+      and naturalness usually varies in a continuum, from 100% natural in one
+       extreme to 0% natural in the other. The massive environmental changes of
+       humanity in the Anthropocene have fundamentally effected all natural environments:
+       including from climate change, biodiversity loss and pollution from plastic and other
+       chemicals in the air and water. More precisely, we can consider the different aspects
+       or components of an environment, and see that their degree of naturalness is not uniform.
+      [2] If, for instance, in an agricultural field, the mineralogic composition and the structure
+       of its soil are similar to those of an undisturbed forest soil, but the structure is quite different.
+ ''',padx=20,pady=20).pack(side="right")
+Label(f2, image=photos[1],anchor="e",padx=20).pack(side="left")
+f2.pack(anchor="w")
+
+
+f3 =Frame(root, width=75, height=50,pady=14)
+Label(f3,text='''Earth science generally recognizes four spheres, the lithosphere, 
+      the hydrosphere, the atmosphere, and the biosphere[3] as correspondent to 
+      rocks, water, air, and life respectively. Some scientists include as part of 
+      the spheres of the Earth, the cryosphere (corresponding to ice) as a distinct
+       portion of the hydrosphere, as well as the pedosphere (to soil) as an active 
+      and intermixed sphere. Earth science (also known as geoscience, the geographical 
+      sciences or the Earth Sciences), is an all-embracing term for the sciences related to
+       the planet Earth.[4] There are four major disciplines in earth sciences, namely geography,
+       geology, geophysics and geodesy. These major disciplines use physics, chemistry, biology, 
+      chronology and mathematics to build a qualitative and quantitative understanding of the principal
+       areas or spheres of Earth.
+''',padx=20,pady=20).pack(side="left")
+Label(f3, image=photos[2],anchor="e").pack(side="left")
+f3.pack(anchor="w")
+
+
+
+root.mainloop()
+
