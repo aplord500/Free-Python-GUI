@@ -1,0 +1,64 @@
+from tkinter import *
+
+root =Tk()
+root.geometry("750x300")
+root.title("pyLord")
+
+def myfunc():
+    print(" select the option")
+
+
+
+# this is use t create a non drop down meanu 
+#mymeanu = Menu(root)
+#mymeanu.add_command(label='Menu |',command= myfunc)
+#mymeanu.add_command(label='Exit |',command= myfunc)
+#root.config(menu=mymeanu)
+
+
+
+''' 
+ yourmenubar = Menu(root)
+m1 = Menu(yourmenubar)
+m1.add_command(label="New Project",command=myfunc)
+m1.add_command(label="Save",command=myfunc)
+m1.add_command(label="Save as",command=myfunc)
+m1.add_command(label="Print",command=myfunc)
+root.config(menu=yourmenubar)
+
+yourmenubar.add_cascade(label="File", menu=m1)
+
+'''
+
+
+mainmenu = Menu(root)
+m1 = Menu(mainmenu,tearoff=0 )
+m1.add_command(label="New Project",command=myfunc)
+m1.add_command(label="Save",command=myfunc)
+m1.add_command(label="Save as",command=myfunc)
+m1.add_command(label="Print",command=myfunc)
+m1.add_separator()
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="File", menu=m1)
+
+
+m2 = Menu(mainmenu, tearoff=0 )
+m2.add_command(label="New Project", command=myfunc)
+m2.add_command(label="Save", command=myfunc)
+m2.add_separator
+m2.add_command(label="Save as",command=myfunc)
+m2.add_command(label="Exit")
+
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="Edit", menu=m2)
+
+
+
+
+
+root.mainloop()
+
+
+
+
+
