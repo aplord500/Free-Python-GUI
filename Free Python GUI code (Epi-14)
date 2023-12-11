@@ -1,0 +1,30 @@
+from tkinter import *
+import tkinter.messagebox as tmsg
+
+
+root = Tk()
+root.geometry("750x250")
+root.title("slider tutors")
+
+#myslider = Scale(root, from_=0, to=100)
+#myslider.pack(anchor="ne")
+
+def getmonet():
+    print(f"we have credited money in account $")
+    tmsg.showinfo("Ammount Credited! $", f"we have credited {myslider2.get()} dollars to your bank account $ !")
+
+
+Label(root, text= "How many money you want ").pack()
+myslider2 = Scale(root, from_=0, to=100, orient=HORIZONTAL, tickinterval=40)
+myslider2.set(37)
+myslider2.pack(anchor="center")
+
+frame4 =Frame(root, borderwidth=5, bg="red", relief= SUNKEN)
+frame4.pack()
+b4 = Button(frame4, bg="white",fg="green", text="we have credited $ ", padx= 40,command=getmonet,font= "TimesNewRoman 8 bold")
+b4.pack()
+
+
+
+
+root.mainloop()
