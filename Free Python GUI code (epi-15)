@@ -1,0 +1,27 @@
+from tkinter import *
+import tkinter.messagebox as tmsg
+
+root = Tk()
+root.geometry("750x250")
+root.title("Radiobutton ")
+
+
+def order():
+    tmsg.showinfo("receved order", f"we have receved your order!{var.get()}. Thanks for ordering")
+
+
+
+#var = IntVar()
+var = StringVar()
+var.set("Radio")
+#var.set(1)
+Label(root,text="What would you like to have sir ?!", font="lucida 15 bold underline", justify=LEFT, padx=15).pack()
+
+radio = Radiobutton(root, text="Dosa", padx=14, variable= var, value="Dosa").pack(anchor="w")
+radio = Radiobutton(root, text="Idli", padx=14, variable= var, value="Idli").pack(anchor="w")
+radio = Radiobutton(root, text="sweets", padx=14, variable= var, value="sweets").pack(anchor="w")
+radio = Radiobutton(root, text="veg biryani", padx=14, variable= var, value="veg biryani").pack(anchor="w")
+
+Button(text="Order nnow", command=order).pack()
+
+root.mainloop()
