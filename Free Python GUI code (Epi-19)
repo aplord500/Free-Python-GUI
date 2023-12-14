@@ -1,0 +1,39 @@
+from  tkinter import*
+
+def upload():
+    statusvar.set("Bussy....")
+    sbar.update()
+    import time
+    time.sleep(2)
+    statusvar.set("Ready....")
+
+root =Tk()
+root.geometry("700x500")
+root.title("Status Bar tutorial")
+
+box = Label(root, text="Crayoon", bg="indigo",fg="white",font="lucida 15 bold underline",justify=LEFT, padx=15)
+box.pack()
+
+statusvar = StringVar()
+statusvar.set("Ready" )
+
+sbar = Label(root, textvariable=statusvar, relief=SUNKEN, anchor="w")
+sbar.pack(side=BOTTOM, fill=X)
+
+# Button(root, text="upload", command=upload, bg="red",fg="white").pack()
+
+frame4 =Frame(root, borderwidth=8, bg="black", relief= SUNKEN)
+frame4.pack()
+b4 = Button(frame4, bg="yellow",fg="red", text="Loading....", padx= 40,command=upload, font= "TimesNewRoman 8 bold")
+b4.pack()
+
+
+
+root.mainloop()
+
+
+
+
+
+
+
