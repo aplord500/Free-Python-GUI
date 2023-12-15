@@ -1,0 +1,20 @@
+from tkinter  import*
+root = Tk()
+root.geometry("800x450")
+root.title("Toranto")
+root.wm_iconbitmap("wweimage.jpg")
+root.configure(background="red")
+
+
+width = root.winfo_screenwidth()
+height = root.winfo_screenheight()
+print(f"{width}x{height}")
+Button(text="close", command= root.destroy).pack()
+
+
+
+
+
+
+root.mainloop()
+
